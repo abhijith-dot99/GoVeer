@@ -1,0 +1,1178 @@
+please give attention to the text which is in "note".
+import the font-family
+
+
+type: "page" ,
+name: "goveer",
+html_element: "div", 
+style: {
+  font-family: "circular, arial, helvetica, sans serif",
+  font-weight: "all standards",
+}
+
+contents: {
+  type: "organism",
+  name: "section_one",
+  html_element: "div",
+  style:{
+  width: "100vw";
+  justify-content: "center"
+  }
+  contents: [{
+    type: "molecule",
+    name: "promo_bar",
+    htmt_element: "div",
+    style:{
+          font-size: "1.1rem",
+          line-height: "1.3",
+          font-weight: "450",
+          animation : "promo_color_swap .25s forwards 3s 1",
+          color : "#646464"
+    }
+    contents:[{
+      type: "atom",
+      name: "swipper_wrapper",
+      html_element: "div",
+      style:{
+            position: "relative",
+            width: "100%",
+            height: "100%",
+            z-index: "1",
+            display: "flex",
+            transition-property: "transform",
+            transform :"translate3d(0,0,0)",
+            transition-duration: "0ms" to  transition-duration: "1000ms"
+
+            note: "i am having a three paragraph which should display on the promo_bar , and should swap the three para on specific seconds, this should continously done"
+      }
+      contents:[{
+        type: "atom",
+        html_element: "span",
+        name: "swipper_text",
+        style:{
+          color: "#f6da49",
+          justify-contents: "centre",
+          padding: "1.6rem",             
+        }
+
+        contents:{
+          "BEST IN CLASS WARRANTY ON ALL VEER GEAR", "FAST, FREE US SHIPPING & RETURNS", "ORDER BY NOON EDT TO SHIP TODAY"
+        }
+        behaviour:{
+          "the contents over here should be keep changing in .24second delay, only one should be displayed at a time"
+        }
+
+      }]
+    }]
+
+
+  }]
+
+}
+
+
+
+
+type: "organism",
+html_element: "div",
+name: "header_nav",
+style: {
+  width: "100%",
+  position: "relative",
+  display: "grid",
+  grid-template-columns: "auto 1fr auto",
+  align-items: "center",
+  justify-content: "space-between",
+  height: "10rem",
+  gap: "2rem",
+  padding : "2.4rem 6rem",
+  font-size: "1.6rem",
+  font-weight: "300",
+
+  background: "linear-gradient(180deg,rgba(17,17,17,0.3) 0,rgba(217,217,217,0) 100%);",
+  color: "var(--transparent-header-text,var(--color-white));"
+}
+contents:
+[
+  {
+  type: "atom",
+  name: "header_logo",
+  html_element: "div",  
+  style: {
+    height: "100%",
+    width: "60px"
+  }
+  note: "here an svg will be added"
+}
+
+
+type: "molecule",
+name: "header_items",
+html_element: "nav",
+style: {
+  font-weight: "300",
+  font-size: "1.6rem",
+
+  position: "unset;",
+    background-color: "transparent;",
+    width: "100%;",
+    height: "100%;",
+    transform: "none;",
+    opacity: "1;",
+    overflow: "unset;"
+}
+contents: [{
+  type: "molecule",
+  html_element: "ul",
+  name: "header_item_list",
+  style: {
+      align-items: "center",
+      grid-auto-flow: "column",
+      display: "grid",
+      justify-content: "center",
+      margin-left: "-1.5rem",
+      margin-right: "-1.5rem",
+  },
+
+  type: "atom",
+  html_element: "li",
+  name: "nav_item",
+  sytle: {
+    padding: "1.5rem",    
+  }
+  content:{
+    "Shop all"
+  }
+  note: also give the following psuedo effect for "nav_item",
+
+  nav_item:after{
+    border-top: "0.1rem solid var(--color-dark-grey)",
+    bottom: "1rem;",
+    content: "";,
+    display: "block;",
+    left: "0;",
+    position: "absolute;",
+    width: "0;",
+    transition: "all 400ms cubic-bezier(0.165,0.84,0.44,1);"
+  }
+note: "repeat this atom (nav_item) 5 times",
+}],
+
+
+
+type: "molecule",
+name: "header_utils",
+html_element: "div",
+style:{
+  display: "flex",
+  gap: "2.4rem",
+  align-items: "center",
+  justify-content: "flex-end"
+}
+content: [{
+  type: "atom",
+  name: "header_button",
+  html_element: div",
+  style: {
+    background : "transparent",
+    width: "15rem",
+    border: "0.2rem solid transparent;",
+    border-radius: "20rem;",
+    cursor: "pointer;",
+    padding: "1.5rem 3rem;",
+    text-align: "center",
+    font-size: "1.4rem",
+    font-weight: "450",
+    line-height: "1.25"
+  }
+
+  content:{"Register Your Gear"},
+
+  type: "atom",
+  name: "header_icon",
+  html_element: "div",
+  style: {
+        position: "relative;",
+        color: "inherit;",
+        min-width: "2rem;",
+        width: "auto;",
+        height: "1.5rem;",
+        padding: "0;",
+        cursor: "pointer;",
+        transition: "initial;",
+  }
+  content: {"here a svg link will be added"}
+
+  note : "repeat this atom ("header_icon") 4 times",
+}]
+
+
+{
+type: "molecule",
+name: "hero_video",
+type: "div",
+style:{
+    background: "var(--color-dark-grey);",
+    height: "calc(100vh - var(--height-promo-bar));",
+    overflow-x: "hidden;",
+    overflow-y: "hidden;",
+    position: "relative;",
+    width :"100%",    
+}
+note: i am having a video to be played overhere 
+"https://player.vimeo.com/video/841330646?loop=1&background=1&app_id=122963"
+ create required elements, if needed
+
+
+
+
+type:"atom",
+name: "hero_text"
+html_element: "div"
+styles:{
+    display: "flex;",
+    flex-direction: "column;",
+    left: "50%;",
+    padding: "0 6rem;",
+    align-items: "center;",
+    text-align: "center",
+    top: "50%;",
+    position: "absolute;",
+    ransform: "translate3d(-50%,-50%,0);",
+    z-index: "2;",
+    width: "100%;",
+    font-size: "44px"
+}
+contents:{
+  <span>THE WORLD IS WAITING.</span> <strong>LET'S GO.</strong> 
+}
+}
+
+
+
+type: "atom",
+html_element: "div",
+name: "down_arrow",
+style: {
+    cursor: "pointer;",
+    position: "absolute;",
+    left: "50%",
+    bottom: "10vh",
+    transform: "translateX(-50%)",
+    z-index: "1";
+    color: "#fff"
+  }
+  contents:{ a svg will be added here}
+
+]
+
+
+type: "atom",
+name: "down_arrow",
+html_element: "div",
+style: {
+  position: "absolute",
+  bottom: "20px",
+  align-items: "center"
+}
+behaviour: {when clicking on down_arrow need a smooth movement to bottom side of the page}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hope you're familiour with hamburger functionality,
+position should be along with "header_icons",
+
+hamburger is { display: "none";  initially }
+
+type: "atom",
+html_element: "button",
+name: "hamburger",
+style: {
+    display: "grid;",
+    align-items: "center;",
+    justify-content: "flex-start;",
+    cursor: "pointer;",
+    padding: "2rem;",
+    margin-left: "-2rem;",
+    justify-self: "baseline;"
+    }
+note: there is a svg available which will be added 
+
+note: hamburger will only visible in (max-width: 1024px) 
+-- resposiveness --
+1024px
+
+type: "atom",
+name: "header_logo",
+type: "div",
+style: {
+      position: absolute;,
+    display: block;,
+    top: 1.5rem;,
+    left: 2rem;,
+}
+
+
+type: "atom",
+name: "search_ham",
+type : "div",
+style: {
+    position: absolute;
+    top: 0.5rem;
+    right: 7rem;
+    padding: 1.5rem;
+    color: var(--color-earth);
+}
+
+
+  type: "atom"
+  name: "close_btn",
+  type: "button",
+  style: {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        padding: 1.5rem;
+        color: black;
+  }
+  behaviour: { should close the hamburger menu}
+
+
+
+
+
+ {
+  "header_items" should be inside hamburger vertically, and should not visible from 1024 onwards
+
+  type: "molecule",
+  name: "ham_header_items",
+  html_element: :"div",
+  style: {
+    margin: 2rem
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 40rem;
+    background-color: white
+    padding: 8.5rem 2rem 3rem 2rem;
+    color: black,
+    font-size: "32px"
+  }
+  behaviour:{ when clicking on the hamburger icon the "header_items" should be visible vertically}
+
+note: there is three svg for header_logo, close_btn and search_ham on top of the hamburger menu,
+
+}
+
+
+
+//second  page
+
+type: "molecule",
+name: "section_two_text",
+html_element: "div",
+style: {
+  display: "flex",
+  flex-direction : "row",
+  gap: "5rem",
+  padding: "140px 60px 0 60px;",
+  background-color: "#ffffff",
+  text-align : "left",
+}
+contents: [{
+  type: "atom",
+  name: "section_text_first",
+  html_element: "div",
+  style: {
+    margin: "8px 0 0 0",
+    font-size: "16px",
+    font-weight: 700;,
+    color: "#11111",
+  }
+  content: {WE EXIST TO RAISE THE <br>WILD IN EVERY CHILD}
+
+
+  type: "atom",
+  name: "section_text_second",
+  html_element: "div",
+  style: {
+    font-size: "44px",
+    font-style: "normal",
+    font-weight: "700",
+    letter-spacing: "-0.02em",
+    line-height: "1.15"
+  },
+  contents: {we believe in family acces to open spaces. In open ended excursions. And
+   in the open minds that result from them.},
+
+
+   behaviour: {
+    the text here should be loaded while scrolling reaches on it, give a smooth animation for this like parallax scrolling.
+   }
+
+}]
+
+
+
+
+//third page
+
+type: "organism",
+html_element: "div",
+name: "section_two_second",
+style: {
+  padding: " 140px 40px 0px 60px",  
+}
+contents: [{
+  type: "atom",
+  html_element: "div",
+  name: "shop_collect_text",
+  style: {
+    font-size: "24px",
+    font-weight: 700,
+    line-height: "30px",
+  }
+  content :{ Shop Collections}
+
+  type: "molecule",
+  name: "shop_collect_cards",
+  html_element: "div",
+  style: {
+    padding: "40px 0 0 0"
+  }
+  contents: [{
+    type: "molecule",
+    name: "shop_card",
+    html_element: "div",
+    style: {
+      display: "flex",
+      width : "100%",
+      height: "100%",
+      position : "relative",
+     
+    }
+    content: [{
+      type: "molecule",
+      name: "shop_img_and_text",
+      html_element: "div",
+      style: {        
+         margin-left: "20px"
+      }
+
+      contents: [{
+        type: "atom",
+        name: "shop_img",
+        html_element: "div",
+        style: {
+          position: "relative",
+          border-radious: "6px",
+        }
+      content: { i am having two images
+      "images\2021-first.webp" and "images\VEER-first.webp"} 
+      note: when i hover "shop_img_and_text the images that i given should change"
+      }
+      {
+        type: "atom",
+        name: "shop_text",
+        html_element: "div",
+        style: {
+          padding: "30px 0 30px 0",
+          color: "black"
+        }
+        contents: {
+          Cruiser <br>Introducing Cruiser XL.<br>Two's company. Four's a party.
+        }
+      }
+
+      note: i am having "shop_img_and_text" four times so create same three times more,
+      responsiveness: 
+      1440{
+        shop_collect_cards 
+        {
+           all aligned vertically 
+        }
+        768{
+          having a vertical scrolling like "overflow: visible", without adjust the width, 
+          like two "shop_img_and_text" will be visibke and third card's piece will be visible
+        }
+        320{
+          one card (shop_img_and_text)shown at a time and having a vertical scrolling, without any adjustment in width
+        }
+      }
+      
+      
+      ]
+    }]
+  }]
+}]
+
+
+
+//fourth component
+
+type: "organism",
+name: "video_container",
+type: "div",
+style: {
+  margin: "140px 0 0 0;",
+  text-align: "center",
+}
+contents: {[
+ 
+
+  type: "molecule",
+  name: "video_content",
+  html_element: "div"
+  style: {
+    height: "100%",
+    width: "100%"
+
+    note: here i am having a video https://player.vimeo.com/video/841319308?loop=1&background=1&app_id=122963
+  }
+  contents: [{
+    type: "atom",
+    name: "yellow_banner",
+    html_element: "div",
+    style: {
+    background: "yellow;",
+    border-radius: "10rem;",
+    color: "black",
+    display: "flex;",
+    justify-content: "center",
+    align-items: "center",
+    line-height: "1",
+    position: "absolute",
+    height: "8rem",
+    left: "6rem",
+    top: "4rem",
+    width: "8rem",
+
+  }
+  contents: {
+    |"Now in<br>XL"
+  },
+
+  type: "molecule",
+  html_element : "div",
+  name: "video_content_main",
+  styles: {
+    bottom: "50%",
+    position: "absolute",
+    transform: "translateY(50%)",
+    width: "100%",
+    text-align: "center"
+  }
+contents: [{
+  type: "molecule",
+  name: "video_content_inner",
+  html_element: "div",
+  style: {
+    padding: "0 35px 0 35px",
+    margin: "0 auto",
+  }
+  contents: {
+    type: "atom",
+    name: "video_main_text",
+    html_type: "div",
+    style: {
+      font-size: "44px",
+      font-weight: 700,    
+      margin-bottom: "10px",  
+      color: "#fff"
+    }
+    contents: {"Cruiser All-Terrain Hybrid"},
+
+
+    type: "atom",
+    name: "video_inner_text",
+    html_element: "para",
+    style: {
+      margin-top: "16px",
+      font-size: "20px"
+    }
+    contents: {"For free range kids."},
+
+
+    type: "molecule",
+    name: "video_buttons",
+    html_element: "div"
+    style: {
+      margin-top: "30px",
+      display: "flex",
+      flex-direction : "row",
+    }
+    contents: [{
+      type: "atom",
+      name: "video_first_btn",
+      html_element: "button",
+      style: {
+            border: "20px solid transparent",
+            border-radius: "20rem",
+            cursor: "pointer",
+            max-width: "100%",
+            outline: "0",
+            padding: "15px 30px",
+            text-align: "center",
+            color: "#ffffff",
+            font-size: "14px",
+            font-weight: "450",
+            line-height: "1.25"
+            background: "transparent"
+      }
+
+      content: {"Learn More"}
+
+       type: "atom",
+      name: "video_first_btn",
+      html_element: "button",
+      style: {
+            border: "20px solid transparent",
+            border-radius: "20rem",
+            cursor: "pointer",
+            max-width: "100%",
+            outline: "0",
+            padding: "15px 30px",
+            text-align: "center",
+            color: "#000000",
+            font-size: "14px",
+            font-weight: "450",
+            line-height: "1.25",
+            background: "#fff"
+      }
+
+      content: {"Buy Now"}
+    
+    
+    }]
+
+
+  }
+}]
+
+  }]
+
+]
+}
+
+
+
+note: contents like "yellow_banner", "video_content_main" all should be positioned over the video.
+video is playing background with full width and height
+
+
+
+
+
+
+///fifth component
+
+type : "organism",
+name: "slider_page",
+html_element: "div",
+style: {
+  padding: "140px 0 0 0",
+  background: "#fff",
+  width: "100%",
+  height: "100%"
+}
+contents: [{
+  type: "molecule",
+  name: "fifth_text",
+  html_element: "div",
+  style: {
+    padding: "60px 20px",
+    display: "flex",
+    justify-content: "space-between",
+    text-align: "left"
+
+  }
+  contents: [{
+    type: "atom",
+    name: "fifth_first_text",
+    html_element: "div",
+    style: {
+      color: "#fff"
+    }
+    cont
+    ents: {
+      "what's New?" and on the next line "Forecast:Expect change."
+    }
+
+    type: "molecule",
+    name: "fifth_second_text",
+    html_element : "div",
+    style{
+      display: "flex",
+      flex-direction: "column",
+      align-items: "center",
+      gap: "6rem"
+    }
+    contents: {
+      type: "atom",
+      html_element: "a",
+      name: "shop_now",
+      style: {
+        color: "#11111",
+        font-size: "11px",
+        font-weight: 300,
+      }
+      content: {
+        "Shop More Gear"
+      }
+      also there is a pseudo element for shop now 
+    }
+    shop_now:after{
+    border-top: "0.1rem #11111;",
+    bottom: "-0.2rem",
+    content: "",
+    left: "0",
+    position: "absolute",
+    width: "100%"
+    }
+
+    type: "atom",
+    name: "left_and_right",
+    html_element: "div",
+    contents: {
+      "note: i am having two svg here which will act as arrow button for the carousel (which will coming after this)"      
+    }
+}]
+
+
+
+type: "molecule",
+name: "product_carousel",
+html_element: "div",
+style: {
+  padding: "20px 0 20px 0",
+  display: "flex",  
+  position: "relative",
+  width: "100%",
+  height: "100%",
+}
+contents{
+type: "moleule",
+html_element: "div",
+name: "product_card_main",
+style: {
+  display: "flex",
+  flex-direction: "column",
+  background: "linear-gradient(122.01deg,#efefef -12.69%,rgba(245,245,245,0) 97.49%)",
+}
+
+
+contents: {
+  type: "molecule",
+  name: "product_card_images",
+  html_element: "div",
+  style: {
+    position "relative",
+    padding: "62px"
+  }
+  content: {
+    type: "atom",
+    name: "product_yellow_badge",
+    html_element: "para",
+    style: {
+      background: "#ffe200",
+      color: "#646464",
+     border-radius: "0.5rem",
+    border: "1px solid #f5f5f5",
+    left: "2rem",
+    padding: "10px 20px",
+    position: "absolute",
+    top: "2rem",
+    z-index: "3000000",
+    font-size: "10px"
+    }
+    content: {"New"}
+  },
+  type: "atom",
+  name: "add_to_avourite",
+  html_element : "div" ,
+  style: {
+    position: absolute;
+    z-index: 4000000;
+    top: 32px;
+    right: 28px;
+    width: auto;
+    height: auto;
+    min-width: 0;
+    min-height: 0;
+    padding: 5px;
+    margin: 0;
+    border: none;
+    line-height: 1;
+    background: none;
+  }
+  content :{
+    "a svg will be applied here"
+  }
+
+type: "atom",
+html_element: "div",
+name: "product_card_img",
+style :{
+  "Carousel_img1.webp " this image will be applied here
+}
+
+
+
+  type: "atom",
+  html_element: "div",
+  name: "product_card_content"
+  sytle :{
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 2rem;
+    position: relative;
+  }
+  content :{ "Catch All" and "₹2,448.45"}
+}
+}
+create product card main 5 times
+note: product_card_image and product_card_content aligned vertically
+
+    
+}]
+
+note: what i am trying to make is a carousel which will be show 3 card initially and will enable a vertical scrolling 
+
+note: and also enable the movement when clicking on "left_and_right" (which created on previous prompt) svg 
+
+
+
+
+//sixth component
+
+type: "molecule",
+name: "sixth_component",
+html_element: "div",
+style: {
+  padding: 140 0 0 0,
+  background: "#fff",
+  display: "flex",
+  flex-direction: "column",
+  justify-content: "center",
+  text-align: "center"
+}
+contents : {
+  type: "atom",
+  name: "sixth_first_text",
+  html_element: "div",
+  style: {
+    text-align: center,
+    font-size: "24px",
+    line-height: "3rem"
+  }
+  contents : {"Awards and Recognition"}
+
+  type: "molecule",
+  name: "sixth_text_contents",
+  html_element: "div",
+  style: {
+    display: "flex",
+    flex-direction: "column",
+    justify-content: "center",    
+  }
+  contents: [{
+    type: "atom",
+    name : "sixth_text",
+    html_element: "div",
+    style: {
+      margin: "0 auto 60px auto"
+      font-size: "44px",
+      position: "relative"
+    }
+    contents: {
+      note: in contents i have three text , which should be changed when making clicks on the left and right arrow, which i will make down.
+      "The Best Beach and Swimming Gear For Kids", and have a img with this aligned stackwise url :images\financial_times.avif
+      "The Best All-Terrain Stroller Wagon",  and have a img with this aligned stackwise url :images\financial_times.avif
+      "The Best Baby Gear and Products in 2022",  and have a img with this aligned stackwise url :images\financial_times.avif
+
+      note: only  one will be shown first and by clicking on arrow will change the content to left or right
+    }
+
+    type: "atom",
+    name: "left_right_arowww",
+    html_element: "div",
+    style: {
+      width: 90%,
+      positiom : "absolute",
+      bottom: "50%",
+      left: "50%",
+      transform: "translateX(-50%);",
+      z-index: "1"
+    }
+    contents: {two svg will be added here class name = "left_aroww" and "right_aroww"} 
+    note: which should be aligned both end of the page(left_arroww should be on leftmost side ,and right_arroww should be on rightmost area)
+    behaviour: { when clicking the svg (left_arroww and right_arroww) should change the contents of " sixth_text to left or right"}
+
+
+
+  }]
+}
+
+# //seventht component
+
+type: "organism",
+name: "section_seven",
+html_element: "div",
+style: {
+  margin: '220px 0 0 0',
+  padding: '140px 60px',
+  display: grid;,
+  gap: 8rem,
+  grid-template-columns: 1fr 3fr,
+  position : relative,
+  background : #f5f5f5,
+}
+contents: [{
+  type: "atom",
+  html_element: "div",
+  name: "seventh_img"
+  style: {
+    position: 'absolute',
+    top: 0,
+    left: 27%,
+    right: initial,
+    max-width: 43rem,
+    width: 30%,
+  }
+  content: ['here a img will be applied in this url "images\seventh_365.webp" '],
+  note : "and image having a parallax effect like image will move a bit top and bottom according to scrolling'"
+
+  type: "molecule",
+  name: "seventh_right_side",
+  html_element: "div",
+  style: {
+    flex-direction: column,
+    max-width: 'initial'
+  }
+  content: {
+    type: "atom",
+    name: "seventh_first_text",
+    html_element: "div",
+    style: {
+      font-size: "24px",
+      font-weight: 700
+    }
+    content: {"Because Life is A Daily Advanture."},
+
+
+    type: "atom",
+    name: "seventh_second_text",
+    html_element: "para",
+    style: {
+      font-size : '14px',
+      margin: 30px 0 0 0;,
+      color: "#646464" ,      
+    }
+    content: {"We draw inspiration from stories of parents raising the wild in their kids through imagination, exploration and connection to the great outdoors."},
+
+  type: 'atom',
+  name: "readmore_stories",
+  html_element: "button",
+  style: {
+    margin: '180px 0 0 0',
+    border: 0.2rem solid #ffffff,
+    color: #111111,
+    position: 'relative',
+    left: 'initial',
+    right: 'initial',
+    bottom: '0',
+  }
+  contents: {'Read More Stories'},
+  behaiour :{on hover - "background-color: #111111,
+    color: #ffffff;"  
+    }  
+  }
+
+
+
+  type: "molecule",
+  html_element: "div",
+  name: "seventh_right_side",
+  style: {
+  
+      border-radius: 0.5rem;,
+      position: 'relative',
+      font-size: 1.6rem;,
+      width: "100%",
+      text-align: "start"
+  }
+  
+  content: {
+    type: "atom",
+    name: "seventh_right_image",
+    style: {
+      margin: '0 0 30px 0',
+      position: 'absolute',
+      top: '0',
+      left: '0',          
+      max-width: "100%",
+      }
+      content: {"here is a image to applied 'images\Jack-Mitrani_seventh.webp'"},
+       note : "and image having a parallax effect like image will move a bit top and bottom according to scrolling'"
+
+      type : "atom",
+      html_element: "para",
+      name: "seventh_paragraph_title",
+      style: {
+        font-size: "16px",
+        color: "#646464",
+        line-height: "20px"
+      }
+      content: {'Jack Mitrani'},
+      type: "atom",
+      html_element: "para",
+      name: "seventh_paragraph_content",
+      style: {
+        font-size : "24px",
+        color: "#111111",
+
+      }
+      content: {"World Record-Breaking Fame, “Friendship” and Fatherhood"},
+
+      type: "atom",
+      name: "readmore_link",
+      html_element: "a"
+      style: {
+        color: "#111111",
+        font-size : '11px',
+      }
+      content: {'Read More'}
+  }
+
+
+  }
+]
+
+
+
+# ///eight component
+
+type: "molecule",
+name: "eightth_component",
+html_element: "div",
+style: {
+  padding: 140px 0 0 0,  
+}
+content: [
+  { here an img will be applied url "images\Store-Landscape_copy.webp" and in mobile the image should change to url"images\Store-Mobile.webp"}
+
+  type : "atom" ,
+  name: "eightth_component_box",
+  html_element: "div",
+  style: {
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 50%;
+    right: 6rem;
+    transform: translateY(-50%);
+    padding: 10rem;
+    width: 40vw;
+    max-width: 74rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #111111
+  }
+  content: [{
+    type: "atom",
+    html_element: "div",
+    name: "upclose_text",
+    style: {
+      font-size: 36px,
+      margin-bottom: 15px,
+      color: #ffffff
+    }
+    contents: {"Up close and personal."}
+    type: "atom",
+    html_element: "div",
+    name: "visit_text",
+    style: {
+        margin-bottom: 30px,
+      font-size: 14px,
+      color: #ffffff
+
+    }
+    content: {"Visit an authorized dealer near you to experience the Veer difference first hand."}
+
+    type: "atom",
+    name: "eightth_button",
+    html_element: "button",
+    style: {
+    background: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+    text-align: center,
+    padding: 15px 30px,
+    border-radious: 20px,
+    border :20px solid transparent,
+
+    transition: background .25s ease-in-out,color .25s ease-in-out,border .25s ease-in-out;
+
+}
+content: {"Find a Store"}
+behaviour: {having a hover effect like 
+background: "#fff",
+color: "#111"}
+
+
+    }
+  ]
+]
+
+
+# ninth component
+
+type: "organism",
+html_element: "div",
+name: "moving_carousel",
+style: {
+  padding: 140px 0 140px 0,
+  margin: 140px 0 0 0;
+  background-color: #f5f5f5
+}
+content: {
+  type: atom,
+  html_element: "div",
+  name: "moving_component_header",
+  style: {
+    text-align: "center",
+    margin-bottom: 80px,
+    font-size: "24px",
+  }
+  content: { "As Featured In"}
+
+    type: "atom",
+    name: "moving_component",
+    html_element: "div",
+    style: {
+      display: flex,
+      justify-content: center,
+    }
+    content: {"i am having a 16 images here ( use this 16 times"images\vogue.avif")which will keep moving from right to left with specific speed" 
+     note: animation: scrollLeftToRight 10s linear infinite;
+     }
+
+  }
